@@ -54,7 +54,7 @@ const restaurant = async(req,res)=>{
         location : { $geoWithin: { $centerSphere: [ [lng,lat], radius] } }
      })
 
-     if(!restaurant) return res.status(404).json({success:false,msg:"No restaurant within tha range"})     
+    
      res.status(200).json({success:true,Number:restaurant.length,data:restaurant})
     } catch (error) {
         res.json(error.message)
